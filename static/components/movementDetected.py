@@ -1,5 +1,5 @@
-from drawOnImage import *
-from pushNotifier import *
+from components.drawOnImage import *
+from components.pushNotifier import *
 
 from picamera import PiCamera
 import subprocess

@@ -1,4 +1,4 @@
-from movementDetected import *
+from components.movementDetected import *
 
 import RPi.GPIO as GPIO
 import time
