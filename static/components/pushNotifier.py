@@ -4,4 +4,4 @@ pn = pn.PushNotifier('Elias4711', 'Anton17032000', 'katzenklappe', 'V2VBBV466C3V
 
 
 def pushNotify():
-    pn.send_image('/home/pi/Desktop/tfjs-customvision/static/pictures/picture-named.jpg', silent=False, devices=['vgWm'])
+    pn.send_image('/home/pi/Desktop/SmartFlap/static/pictures/picture-named.jpg', silent=False, devices=['vgWm'])
