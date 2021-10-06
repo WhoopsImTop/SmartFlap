@@ -1,4 +1,0 @@
-#!/usr/bin/bash
-
-# Start my node project
-sudo python3 CatCapture.py

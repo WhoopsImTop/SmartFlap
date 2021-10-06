@@ -1,8 +1,6 @@
 const tf = require('@tensorflow/tfjs');
 const nodeTf = require('@tensorflow/tfjs-node');
-const path = require('path');
 const fs = require('fs');
-const Jimp = require('jimp');
 
 const TARGET_CLASSES = {
   0: "Katze",

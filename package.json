@@ -1,5 +1,5 @@
 {
-  "name": "tfjs-customvision",
+  "name": "SmartFlap",
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
@@ -8,14 +8,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SaschaDittmann/tfjs-customvision.git"
+    "url": "git+https://github.com/WhoopsImTop/SmartFlap.git"
   },
-  "author": "Sascha Dittmann",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/SaschaDittmann/tfjs-customvision/issues"
-  },
-  "homepage": "https://github.com/SaschaDittmann/tfjs-customvision#readme",
+  "author": "Elias Englen",
   "dependencies": {
     "@tensorflow/tfjs": "^3.9.0",
     "@tensorflow/tfjs-node": "^3.9.0",
@@ -25,5 +20,5 @@
     "node-gyp": "^8.2.0",
     "node-pre-gyp": "^0.17.0"
   },
-  "description": "Use the power of Machine Learning to diagnose TB from chest x-rays."
+  "description": "Smart Cat detection"
 }
