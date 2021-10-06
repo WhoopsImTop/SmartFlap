@@ -1,4 +1,5 @@
 TARGET_CLASSES = {
-  0: "Normal",
-  1: "Tuberculosis"
+  0: "Katze",
+  1: "Mit Maus",
+  2: "Weg"
 };
