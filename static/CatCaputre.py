@@ -3,7 +3,6 @@ from components.movementDetected import *
 import RPi.GPIO as GPIO
 import time
 
-
 #GPIO Modus (BOARD / BCM)
 GPIO.setmode(GPIO.BCM)
  
