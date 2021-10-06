@@ -21,7 +21,7 @@ def movementDetected(abstand):
     camera.capture('/home/pi/Desktop/tfjs-customvision/static/pictures/picture.jpg')
     camera.stop_preview()
     abstand_value = str(abstand)
-    response = subprocess.check_output(['node', '../predict.js'])
+    response = subprocess.check_output(['node', './../predict.js'])
     parsed = json.loads(response)
     if(parsed.find("Katze") == 0):
         DrawOnImg(parsed, abstand_value, "picture-named.jpg")
