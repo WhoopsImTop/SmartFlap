@@ -12,8 +12,10 @@
   },
   "author": "Elias Englen",
   "dependencies": {
-    "@tensorflow/tfjs": "^3.9.0",
+    "@mapbox/node-pre-gyp": "^1.0.6",
+    "@tensorflow/tfjs": "^3.10.0",
     "@tensorflow/tfjs-node": "^3.9.0",
+    "canvas-constructor": "^5.0.1",
     "express": "^4.17.1",
     "jimp": "^0.16.1",
     "node-fetch": "^2.6.1",

@@ -2,9 +2,8 @@ from PIL import Image
 from PIL import ImageFont
 from PIL import ImageDraw
 
-def DrawOnImg(parsed, abstand, fileName):
+def DrawOnImg(parsed, fileName):
     detection = parsed or " "
-    print(abstand)
     img = Image.open('/home/pi/Desktop/SmartFlap/static/pictures/picture.jpg')
     draw = ImageDraw.Draw(img)
     font = ImageFont.truetype("/home/pi/Downloads/Poppins-Bold.ttf")

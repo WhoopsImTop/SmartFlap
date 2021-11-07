@@ -3,53 +3,23 @@ from components.movementDetected import *
 import RPi.GPIO as GPIO
 import time
 
-#GPIO Modus (BOARD / BCM)
 GPIO.setmode(GPIO.BCM)
- 
-#GPIO Pins zuweisen
-GPIO_TRIGGER = 18
-GPIO_ECHO = 24
- 
-#Richtung der GPIO-Pins festlegen (IN / OUT)
-GPIO.setup(GPIO_TRIGGER, GPIO.OUT)
-GPIO.setup(GPIO_ECHO, GPIO.IN)
-
-def distanz():
-    # setze Trigger auf HIGH
-    GPIO.output(GPIO_TRIGGER, True)
- 
-    # setze Trigger nach 0.01ms aus LOW
-    time.sleep(0.00001)
-    GPIO.output(GPIO_TRIGGER, False)
- 
-    StartZeit = time.time()
-    StopZeit = time.time()
- 
-    # speichere Startzeit
-    while GPIO.input(GPIO_ECHO) == 0:
-        StartZeit = time.time()
- 
-    # speichere Ankunftszeit
-    while GPIO.input(GPIO_ECHO) == 1:
-        StopZeit = time.time()
- 
-    # Zeit Differenz zwischen Start und Ankunft
-    TimeElapsed = StopZeit - StartZeit
-    # mit der Schallgeschwindigkeit (34300 cm/s) multiplizieren
-    # und durch 2 teilen, da hin und zurueck
-    distanz = (TimeElapsed * 34300) / 2
- 
-    return distanz
+GPIO.setwarnings(False)
+GPIO.setup(25, GPIO.IN)
 
 if __name__ == '__main__':
     try:
+        # wait for sensor trigger loop
         while True:
-            abstand = distanz()
-            print(abstand)
-            if(abstand < 50):
-                movementDetected(abstand)
-            time.sleep(0.5)
-        # Beim Abbruch durch STRG+C resetten
+            # waiting for item
+            while GPIO.input(25) == 0:
+                time.sleep(0.1)
+                movementDetected()
+            
+            # waiting for item to pass
+            while GPIO.input(25) == 1:
+                time.sleep(0.1)
+    
     except KeyboardInterrupt:
         print("Messung vom User gestoppt")
         GPIO.cleanup()

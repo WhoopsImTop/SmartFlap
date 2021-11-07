@@ -5,7 +5,8 @@ const fs = require('fs');
 const TARGET_CLASSES = {
   0: "Katze",
   1: "Mit Maus",
-  2: "Weg"
+  2: "Mit Vogel",
+  3: "Weg"
 };
 
 async function predict() {
@@ -21,9 +22,10 @@ let model;
 		.resizeNearestNeighbor([224, 224])
 		.expandDims()
 		.toFloat()
-		.reverse(-1); // RGB -> BGR
 	let predictions = await model.predict(tensor).data();
+	
 	let top5 = Array.from(predictions)
+	console.log(top5)
 		.map(function (p, i) { // this is Array.map
 			return {
 				probability: p,
@@ -31,7 +33,7 @@ let model;
 			};
 		}).sort(function (a, b) {
 			return b.probability - a.probability;
-		});
+		});+
 	console.log(JSON.stringify(top5[0].label + ' ' + top5[0].probability))
 };
 
